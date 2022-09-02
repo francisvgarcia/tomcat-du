@@ -1,0 +1,12 @@
+version: "2.2"
+services:
+  nginx:
+    hostname: nginx-tomcat
+    image: nginx
+    ports:
+      - "8888:8888"
+    restart: always
+    volumes:
+    - type: bind
+      source: ./tomcat.conf
+      target: /etc/nginx/conf.d/tomcat.conf
